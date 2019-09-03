@@ -92,4 +92,19 @@ public class MongodbGFSController {
         outputStream.close();
         inputStream.close();
     }
+
+    /**
+     * 删除文件
+     * */
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Json deleteFile(@RequestParam(name = "file_id") String fileId){
+        Query query = Query.query(Criteria.where("_id").is(fileId));
+        GridFSFile gridFSFile = gridFsTemplate.findOne(query);
+        if (gridFSFile == null) {
+            return BulidResultJson.getResultJson(true, fileId, "200", "未查到此文件!");
+        }
+        gridFsTemplate.delete(query);
+        return BulidResultJson.getResultJson(true, fileId, "200", "删除成功!");
+    }
 }
