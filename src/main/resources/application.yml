@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://yuxiang:8798132543@139.199.29.250:27017/flowpp
+server:
+  port: 8001
