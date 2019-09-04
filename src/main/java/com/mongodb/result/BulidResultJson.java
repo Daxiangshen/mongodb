@@ -1,7 +1,5 @@
 package com.mongodb.result;
 
-import com.mongodb.entity.Json;
-
 /**
  * <h3>BulidResultJson  Class</h3>
  *

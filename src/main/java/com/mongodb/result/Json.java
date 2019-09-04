@@ -1,4 +1,4 @@
-package com.mongodb.entity;
+package com.mongodb.result;
 
 import lombok.Data;
 
