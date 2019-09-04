@@ -97,11 +97,9 @@ public class MongodbImageController {
             outputStream=response.getOutputStream();
             inputStream=connection.getInputStream();
             IOUtils.copy(inputStream,outputStream);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             IOUtils.closeQuietly(inputStream);
             IOUtils.closeQuietly(outputStream);
         }
