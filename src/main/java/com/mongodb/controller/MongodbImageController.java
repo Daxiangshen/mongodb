@@ -52,7 +52,7 @@ public class MongodbImageController {
             uploadFile.setSize(file.getSize());
 
             UploadFile savedFile=mongoTemplate.save(uploadFile);
-            String url="http://localhost:8001/downloadImage/"+savedFile.getId();
+            String url="http://139.199.29.250:8001/showImage/"+savedFile.getId();
             return BulidResultJson.getResultJson(true,url,"200","图片上传成功");
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class MongodbImageController {
         UploadFile file=mongoTemplate.findById(id,UploadFile.class);
         String fileName=file.getName();
         String contentType=file.getContentType();
-        String url="http://localhost:8001/downloadImage/"+file.getId();
+        String url="http://139.199.29.250:8001/downloadImage/"+file.getId();
         OutputStream outputStream = null;
         InputStream inputStream = null;
         try {
